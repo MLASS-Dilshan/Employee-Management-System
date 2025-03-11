@@ -8,5 +8,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+
+}
+
+.add-btn {
+    display: flex;
+    justify-content: end;
+    margin-right: 90px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
 }

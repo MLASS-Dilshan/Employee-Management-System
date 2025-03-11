@@ -7,9 +7,10 @@ const ButtonComponent = ({
   color = "primary",
   style,
   onClick,
+  type
 }) => {
   return (
-    <Button variant={variant} color={color} onClick={onClick} style={style}>
+    <Button variant={variant} color={color} onClick={onClick} style={style} type={type}>
       {children}
     </Button>
   );
