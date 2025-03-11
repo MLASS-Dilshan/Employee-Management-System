@@ -8,6 +8,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
 import axios from "axios";
+import ButtonComponent from "./shared/ButtonComponent";
 
 const GetEmployees = () => {
   const [employees, setEmployees] = useState([]);
@@ -26,48 +27,50 @@ const GetEmployees = () => {
   };
 
   const tableHeadStyles = {
-    backgroundColor: '#D69ADE'
-  }
+    backgroundColor: "#D69ADE",
+  };
 
   return (
     <>
-    <div className="tableContainer">
-      <TableContainer component={Paper} style={{width : '90%'}}>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
-          <TableHead style={tableHeadStyles}>
-            <TableRow>
-              <TableCell style={{color: '#fff'}}>First Name</TableCell>
-              <TableCell style={{color: '#fff'}}>Last Name</TableCell>
-              <TableCell style={{color: '#fff'}}>Address</TableCell>
-              <TableCell style={{color: '#fff'}}>Phone Number</TableCell>
-              <TableCell style={{color: '#fff'}}>Position</TableCell>
-              <TableCell style={{color: '#fff'}}>Action</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {employees.map((employee) => (
-              <TableRow
-                key={employee.id}
-                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-              >
-                <TableCell>{employee.firstName}</TableCell>
-                <TableCell>{employee.lastName}</TableCell>
-                <TableCell>{employee.address}</TableCell>
-                <TableCell>{employee.phoneNumber}</TableCell>
-                <TableCell>{employee.position}</TableCell>
-                <TableCell>
-                  <Button variant="outlined" color="success" style={{marginRight: '5px'}}>
-                    View
-                  </Button>
-                  <Button variant="outlined" color="error">
-                    Delete
-                  </Button>
-                </TableCell>
+      <div className="tableContainer">
+        <TableContainer component={Paper} style={{ width: "90%" }}>
+          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <TableHead style={tableHeadStyles}>
+              <TableRow>
+                <TableCell style={{ color: "#fff" }}>First Name</TableCell>
+                <TableCell style={{ color: "#fff" }}>Last Name</TableCell>
+                <TableCell style={{ color: "#fff" }}>Address</TableCell>
+                <TableCell style={{ color: "#fff" }}>Phone Number</TableCell>
+                <TableCell style={{ color: "#fff" }}>Position</TableCell>
+                <TableCell style={{ color: "#fff" }}>Action</TableCell>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+            </TableHead>
+            <TableBody>
+              {employees.map((employee) => (
+                <TableRow
+                  key={employee.id}
+                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                >
+                  <TableCell>{employee.firstName}</TableCell>
+                  <TableCell>{employee.lastName}</TableCell>
+                  <TableCell>{employee.address}</TableCell>
+                  <TableCell>{employee.phoneNumber}</TableCell>
+                  <TableCell>{employee.position}</TableCell>
+                  <TableCell>
+                    <ButtonComponent
+                      color="success"
+                      style={{ marginRight: "5px" }}
+                    >
+                      View
+                    </ButtonComponent>
+
+                    <ButtonComponent color="error">Delete</ButtonComponent>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
       </div>
     </>
   );
